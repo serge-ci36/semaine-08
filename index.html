@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+
+<html lang="fr">
+    
+<head>
+	<meta charset="utf-8">
+	
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.mixitup.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<link type="text/CSS" rel="stylesheet" href="css/bootstrap.min.css"/>	
+	<link type="text/CSS" rel="stylesheet" href="css/Fonts.css"/>
+	<link type="text/CSS" rel="stylesheet" href="css/stylesheet.css"/>
+	
+	<link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
+
+	<title>Serge PINAUD avec Javascript</title>
+	
+	 <script type="text/javascript">
+    $(function () {
+        
+        var filterList = {
+        
+            init: function () {
+            
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });             
+            
+            },
+            
+            hoverEffect: function () {
+            
+                // Fonction pour l'effet "hover"
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+                    }       
+                );              
+            
+            }
+        };
+        
+        // Lance les deux fonctions "hover" et "filtre"
+        filterList.init();
+        
+        
+    }); 
+    </script>
+	
+	
+</head>
+
+<body>
+
+<body data-spy="scroll" data-target=".navbar">
+	<!------ Définition de la barre de navigation ---------------------------------------------------------------------------------------------------->
+	<div class="container-fluid">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid cadre">
+					<div class="navbar-header">
+						<button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand active caviar "><img src="images/POIDS PLUME.png" width="30" height="30" class="plume">
+						<strong class="c-bleu1">Curriculum vitae</strong></a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav caviar c-bleu1">
+							<li><a href="#menu1">Ma motivation</a></li>
+							<li><a href="#menu2">Ma formation</a></li>
+							<li><a href="#menu3">Mon projet</a></li>
+							<li><a href="#menu4">Mes compétences</a></li>
+							<li><a href="#menu5">Mon portfolio</a></li>
+							<li><a href="#menu6">Mes coordonnées</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+	</div>
+	<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+	<header>
+		<section class="jumbotron partie_1 cadre" >
+					
+			<div class="container-fluid " >
+				<div class="row">
+					<div class="col-md-4">
+						<div id="head_description">
+							<h2 class="text-center">Serge PINAUD</h2>
+							<h1 class="text-center"><strong>Développeur Codeur</strong></h1>  
+							<img class="vibre" src="images/ombre.png" alt="ombre" >
+							<img class="vibre" src="images/qr.png" alt="qr code" > 
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div id="head_image">
+							<img src="images/photo_250.png" alt="photo de serge pinaud" > 
+							
+						</div>
+					</div>
+				</div>	
+			</div>
+					
+		</section>	
+	</header>			
+
+	
+	<section class="jumbotron cadre" id="menu1">
+            <div class="container">
+                <p>Je suis un jeune développeur, qui au terme de son cursus scolaire a bifurqué vers des emplois allant d'assistant technico-commercial jusqu'à ouvrier.</p>
+                <p>J'entame grace à la formation Simplon, une nouvelle phase professionnelle.</p>
+            </div>
+    </section>
+	
+	<section class="jumbotron cadre" id="menu2">
+        <div class="container">
+		
+			<h3 class="cadre">En formation "codeur informatique" avec Simplonline</h3>
+			<p class="text-justify">J'ai intégré un programme de formation de 6 mois, pour acquérir les bases du codage informatique en parallèle des cours Openclassroom et Codecademy.</p>
+
+			<h3 class="cadre">Avant Simplonline</h3>
+			<p class="text-justify">Niveau BTS informatique de gestion (option comptabilité).</p>
+			<p class="text-justify">Bac Pro Bureautique.</p> 
+			<p class="text-justify">BEP Agent des services administratifs et informatiques.</p>
+			<p class="text-justify">CAP Employé de bureau.</p>
+			<p class="text-justify">Brevet des collèges.</p>
+		</div>
+    </section>
+	
+	<section class="jumbotron cadre" id="menu3">
+        <div class="container">
+			<h3 class="cadre">Mom projet</h3>
+			<p class="text-justify">Devenir codeur informatique, et grace à mon esprit créatif, devenir un futur créateur d'applications révolutionnaires.</p>
+			<p class="text-justify">Acquérir un maximum de connaissances afin de pouvoir conseiller les entreprises ou auto-entrepreneurs dans leurs démarches WEB.</p>
+        </div>
+    </section>
+	
+	<section class="jumbotron cadre" id="menu4">
+        <div class="container">
+			<h3 class="cadre">Mes compétences </h3>
+			<p class="text-justify">HTML5/CSS3,</p>
+			<p class="text-justify">PHP et RUBY et Javascript.</p>
+			<p class="text-justify">CQPI Animateur d'équipe.</p>
+			<p class="text-justify">Maitrise de Word, Exel, Powerpoint.</p>
+        </div>
+    </section>
+
+	<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<section class="jumbotron cadre" id="menu5">
+		<div class="container">
+			<h2 style="color:black" >Mon Portfolio</h2>
+			
+				<ul id="filters" class="clearfix row">
+					<li><span class="filter active " data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
+					<li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+					<li><span class="filter" data-filter="cat2">Javascript</span></li>
+					<li><span class="filter" data-filter="cat3">Formation</span></li>
+					<li><span class="filter" data-filter="cat4">Loisirs</span></li>
+				</ul>
+
+				<div id="portfoliolist"> 
+					
+					<!------------------------------------------------------------------------>
+
+					<div class="portfolio cat1 cadre" data-cat="cat1">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/html-et-css.jpg" alt="img html-css" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Projet HTML/CSS</a>
+									<span class="text-category">HTML/CSS</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>      
+								
+				<!--	<div class="portfolio cat3" data-cat="cat3">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/OpenFoodFacts.jpg" alt="img OpenFoodFacts" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">API Open Food Facts</a>
+									<span class="text-category">Ruby</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>  -->
+ 
+					<div class="portfolio cat3 cadre" data-cat="cat3">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolios/simplon-profil.jpg" alt="img simplon-profil" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Page de profil</a>
+									<span class="text-category">Profil</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>          
+
+					<div class="portfolio cat2 cadre" data-cat="cat2">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/java.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Projet en Javascript</a>
+									<span class="text-category">Javascript</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>                                                                                                                                                         
+					
+					<div class="portfolio cat3 cadre" data-cat="cat3">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/github-profil.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Github profil</a>
+									<span class="text-category">Github profil</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div> 
+					
+					<div class="portfolio cat3 cadre" data-cat="cat3">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/certif-oc.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Certificats Open Classroom</a>
+									<span class="text-category">Certificats</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div> 
+					
+					<div class="portfolio cat3 cadre" data-cat="cat3">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/codecademy.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Apprentissage en cours</a>
+									<span class="text-category">En cours!</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>   
+
+					<div class="portfolio cat1 cadre" data-cat="cat1">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/exo-div.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Page placement div</a>
+									<span class="text-category">HTML/CSS</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>                                                      
+					
+					<div class="portfolio cat4 cadre" data-cat="cat4">
+						<div class="portfolio-wrapper">         
+							<img src="images/portfolios/USP-foot.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">USP Foot</a>
+									<span class="text-category">Loisirs</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>                                                      
+					
+
+					
+			
+			</div>
+			
+	   
+		</div>
+	 </section>
+	
+	
+	
+	
+	<footer>
+		<h3 class="cadre" style="color:rgb(17,31,66) ; background-color:white"><strong>Mes coordonnées</strong></h3>
+		
+		<div class="container-fluid" id="menu6">
+			<div class="row">
+			
+				<div class="col-md-12 footer_liens">
+
+					<div class="col-md-6 ">
+					
+						<iframe id="maps" class=" cadre" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30894.003494422446!2d1.7006074309358403!3d46.81080757089712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1449791957721" >
+						</iframe>
+
+					</div>
+					
+					<div class="col-md-6 ">
+					<!-- c'est la place pour le formulaire -------------------------------------------->
+						<div class="col-md-12 " style="line-height:2.2em ">
+						
+						  <form  role="form" method="post" enctype="multipart/form-data" action="traitement.php" style="color:white">
+								<fieldset class=" cadre">
+
+									<legend><h2><strong>Pour me laisser un message</strong></h2></legend>
+										
+									
+										<label for="Nom_entreprise">Nom de l'entreprise :</label>
+										<input type="text" id="Nom_entreprise" name="entreprise" class="form-control" placeholder="Votre entreprise">
+										  
+										<label for="Nom">Contact :</label>
+										<input type="text" id="Nom" name="Contact" class="form-control" placeholder="Votre nom">
+										  
+										<label for="telephone">Numéro de téléphone :</label>
+										<input type="number" id="telephone" name="téléphone" class="form-control" placeholder="Votre numéro">
+										  
+										<label for="email">Email :</label>
+										<input type="email" class="form-control" id="email" name="commentaire" placeholder="votre email">
+											
+										<label>Commentaire :</label>
+										<textarea class="form-control" id="commentaire" name="commentaire"rows="3"></textarea>
+								
+										<br/>
+										
+									<button type="submit" class="btn btn-primary pull-right ">E N V O Y E R</button>
+								
+								</fieldset>
+								
+						  </form>
+						  
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 footer_liens " >
+					<div class="col-md-6 " >
+		
+						<div class="b_circle cadre" >
+							<a href="mailto:serge.pinaud.36.sp@gmail.com" TARGET="_blank"><img src="images/b_mail.png" alt="bouton mail" width="50" height="50"  ></a>
+						</div>
+						<div class="b_circle cadre">
+							<a href="https://www.facebook.com/serge.pinaud.5" TARGET="_blank"><img src="images/b_facebook.png" alt="bouton facebook" width="50" height="50" ></a>
+						</div>
+						<div class="b_circle cadre">
+							<a href="https://github.com/serge-ci36" TARGET="_blank"><img src="images/b_github.png" alt="bouton github" width="50" height="50" ></a>
+						</div>
+						<div class="b_circle cadre">
+							<a href="http://simplonline.co/" TARGET="_blank"><img src="images/b_simplon.png" alt="bouton simplon" width="50" height="50" ></a>
+						</div>
+						<div class="b_circle cadre">
+							<a href="http://www.skype.com/fr/" TARGET="_blank"><img src="images/b_skype.png" alt="bouton skype" width="50" height="50" ></a>
+						</div>
+						<div class="b_circle cadre">
+							<a href="https://twitter.com/" TARGET="_blank"><img src="images/b_twitter.png" alt="bouton twitter" width="50" height="50" ></a>
+						</div>
+					</div>	
+						
+					<div class="col-md-6 " >
+					<h4 class="text-center caviar c-blanc"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> : 10 rue Jacques LACOUR - 36000 CHATEAUROUX</h4>
+					<h5 class="text-center caviar c-blanc"> <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> : 02-54-07-22-14 ou 06-50-11-33-68</h5>
+					</div>	
+						
+				</div>
+				
+			</div>
+
+		</div>
+		
+	</footer>
+	
+</body>
+
+</html>
